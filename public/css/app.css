@@ -1,0 +1,39 @@
+.scroll {
+    overflow-y: scroll;
+    max-height: 80dvh;
+}
+.scroll::-webkit-scrollbar{
+    display: none;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+th {
+    text-align: center;
+}
+td {
+    text-align: center;
+}
+.display-1 {
+    font-size: 4rem;
+    font-weight: 500;
+}
+body{
+    background-color: #f2f3f4;
+
+}
+.bg{
+    background-color: #e0e0e0;
+}
+
+a{
+    text-decoration: none;
+    color: #1f1f1f;
+}
+
+.grd{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
