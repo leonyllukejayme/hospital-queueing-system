@@ -47,17 +47,14 @@
                                 <td>{{$result->gender}}</td>
                                 <td>{{$result->birthdate}}</td>
                                 <td class="d-flex justify-content-center gap-2">
-                                    @php
-                                    $isFirstRow = $result->queue_no == $firstQueueNo;
-                                    $isLastRow = $result->queue_no == $lastQueueNo;
-                                    @endphp
+
                                     <form action="{{route('reorderQueueUp',['department' => $result->department_id - 1])}}" method="POST">
                                         @csrf
                                         @method('put')
                                         <input type="hidden" name="dept_id" value="{{$result->department_id}}">
                                         <input type="hidden" name="queue_no" value="{{$result->queue_no}}">
 
-                                        <button type="submit" class="btn btn-primary" @if ($isFirstRow) disabled @endif><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                                        <button type="submit" class="btn btn-primary" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
                                                 <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5" />
                                             </svg></button>
 
@@ -69,7 +66,7 @@
                                         @method('put')
                                         <input type="hidden" name="dept_id" value="{{$result->department_id}}">
                                         <input type="hidden" name="queue_no" value="{{$result->queue_no}}">
-                                        <button type="submit" class="btn btn-primary" @if ($isLastRow) disabled @endif> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                                        <button type="submit" class="btn btn-primary"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
                                                 <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4" />
                                             </svg></button>
 

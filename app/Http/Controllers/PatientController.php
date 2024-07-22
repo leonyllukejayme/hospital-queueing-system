@@ -56,13 +56,13 @@ class PatientController extends Controller
             ->orderBy('q.queue_no')
             ->get();
 
-        $firstQueueNo = $results->first()->queue_no;
-        $lastQueueNo = $results->last()->queue_no;
+        // $firstQueueNo = $results->first()->queue_no;
+        // $lastQueueNo = $results->last()->queue_no;
 
 
 
         $title = $dpt[$department];
-        return view('dept_table', ['title' => $title, 'results' => $results, 'firstQueueNo' => $firstQueueNo, 'lastQueueNo' => $lastQueueNo]);
+        return view('dept_table', ['title' => $title, 'results' => $results]);
     }
 
 
